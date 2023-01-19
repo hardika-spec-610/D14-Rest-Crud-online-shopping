@@ -15,7 +15,7 @@ const getProduct = async () => {
     };
     const response = await fetch(url, options);
     const product = await response.json();
-    console.log(product);
+    // console.log(product);
     renderProduct(product);
   } catch (error) {
     //   handleError(error)
@@ -37,11 +37,12 @@ const renderProduct = (arrayOfProducts) => {
           <p class="card-text">${description}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">${brand}</li>
-          <li class="list-group-item">${price}</li>
+          <li class="list-group-item"><b class="mr-2">Brand:</b>${brand}</li>
+          <li class="list-group-item"><b class="mr-2">Price:</b>${price}</li>
         </ul>
         <div class="card-body">
           <a href="../Details Page/details.html?id=${_id}" class="card-link">Product Details</a>
+          <a href="../Back Office/back-office.html?id=${_id}" class="card-link">Edit</a>
         </div>
       </div>
   </div>`;
